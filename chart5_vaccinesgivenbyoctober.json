@@ -41,7 +41,7 @@
       },
   
       "y": {
-        "field": "cumVaccinesGivenByPublishDate",
+        "field": "cumDeaths28DaysByDeathDate",
         "type": "quantitative",
         "title": null,
         "axis": {"grid": false}
