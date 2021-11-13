@@ -1,47 +1,26 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
 
-  "description": "Manually Made Chart",
-
-   "title": {
-    "text": "Manually Made Chart",
-    "subtitle":"Chart made, with the data being manually written in",
+  "title": {
+    "text": "Manual Chart",
+    "subtitle":"A bar chart with the data being manually input",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
     "color": "black"
   },
-
   "data": {
     "values": [
-      {"x": "UK", "y": 70}, {"x": "France", "y": 32}, {"x": "Germany", "y": 48},
-      {"x": "Poland", "y": 56}, {"x": "Romania", "y": 92},
+      {"x": "UK", "y": 28}, {"x": "USA", "y": 55}, {"x": "France", "y": 43},
+      {"Poland": "D", "y": 91}, {"x": "y", "y": 81}
     ]
   },
   "height": 300,
   "width": 345,
-  "mark": {
-    "type": "line",
-    "point": false,
-    "interpolate": "monotone",
-    "color": "blueviolet"
-  },
+  "mark": "bar",
   "encoding": {
-    "x": {
-      "field": "x",
-      "type": "nominal",
-      "axis": {
-        "title": null,
-        "grid": false,
-        "labelSeparation": 20,
-        "ticks": false
-      }
-    },
-    "y": {
-      "field": "y",
-      "type": "quantitative",
-      "title": null,
-      "axis": {"grid": false}
-    }
+    "x": {"field": "x", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "y", "type": "quantitative"}
   }
 }
