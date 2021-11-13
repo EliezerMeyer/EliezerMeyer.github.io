@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
     "title": {
-      "text": "Deaths After a Positive Covid Test",
+      "text": "Deaths After a Positive Covid Test - Datapoints Manually Added",
       "subtitle":"This graph is the same as the previous one, with some datapoints manually added",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
