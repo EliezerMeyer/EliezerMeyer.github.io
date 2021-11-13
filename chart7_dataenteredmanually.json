@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 
-  "description": "Productivity UK",
+  "description": "Manually Made Chart",
 
    "title": {
-    "text": "UK productivity, 1971-2021",
-    "subtitle":"Labour productivity. Output per hour worked, 2018==100. Source: ONS",
+    "text": "Manually Made Chart",
+    "subtitle":"Chart made, with the data being manually written in",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
@@ -16,7 +16,8 @@
     "values": [
       {"x": "UK", "y": 70}, {"x": "France", "y": 32}, {"a": "Germany", "y": 48},
       {"a": "Poland", "y": 56}, {"x": "Romania", "y": 92},
-    ],
+    ]
+  },
   "height": 300,
   "width": 345,
   "mark": {
@@ -39,7 +40,7 @@
     "y": {
       "field": "y",
       "type": "quantitative",
-      "title": "",
+      "title": null,
       "axis": {"grid": false}
     }
   }
