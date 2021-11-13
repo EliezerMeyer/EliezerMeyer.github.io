@@ -27,8 +27,8 @@
   },
   "encoding": {
     "x": {
-      "field": "Date",
-      "type": "temporal",
+      "field": "x",
+      "type": "nominal",
       "axis": {
         "title": null,
         "grid": false,
@@ -37,7 +37,7 @@
       }
     },
     "y": {
-      "field": "Value",
+      "field": "y",
       "type": "quantitative",
       "title": "",
       "axis": {"grid": false}
