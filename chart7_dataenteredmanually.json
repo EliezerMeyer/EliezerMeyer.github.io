@@ -14,8 +14,8 @@
 
   "data": {
     "values": [
-      {"x": "UK", "y": 70}, {"x": "France", "y": 32}, {"a": "Germany", "y": 48},
-      {"a": "Poland", "y": 56}, {"x": "Romania", "y": 92},
+      {"x": "UK", "y": 70}, {"x": "France", "y": 32}, {"x": "Germany", "y": 48},
+      {"x": "Poland", "y": 56}, {"x": "Romania", "y": 92},
     ]
   },
   "height": 300,
