@@ -1,15 +1,46 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A simple bar chart with embedded data.",
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+  "description": "Productivity UK",
+
+   "title": {
+    "text": "UK productivity, 1971-2021",
+    "subtitle":"Labour productivity. Output per hour worked, 2018==100. Source: ONS",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
   "data": {
     "values": [
       {"x": "UK", "y": 70}, {"x": "France", "y": 32}, {"a": "Germany", "y": 48},
       {"a": "Poland", "y": 56}, {"x": "Romania", "y": 92},
-    ]
+    ],
+  "height": 300,
+  "width": 345,
+  "mark": {
+    "type": "line",
+    "point": false,
+    "interpolate": "monotone",
+    "color": "blueviolet"
   },
-  "mark": "bar",
   "encoding": {
-    "x": {"field": "x", "type": "nominal", "axis": {"labelAngle": 0}},
-    "y": {"field": "y", "type": "quantitative"}
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "grid": false,
+        "labelSeparation": 20,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": false}
+    }
   }
 }
