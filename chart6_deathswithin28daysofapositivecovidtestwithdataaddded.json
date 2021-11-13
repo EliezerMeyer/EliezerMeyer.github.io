@@ -3,7 +3,7 @@
 
     "title": {
       "text": "Deaths After a Positive Covid Test",
-      "subtitle":"This graph compares the cumulative number of Covid deaths in area within 28 days of a first positive test",
+      "subtitle":"This graph is the same as the previous one, with some datapoints manually added",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
