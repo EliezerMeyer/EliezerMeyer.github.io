@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {
+      "text": "Deaths After a Positive Covid Test",
+      "subtitle":"This graph compares the cumulative number of Covid deaths in area within 28 days of a first positive test",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+     "data": {
+      "url": "Cumulative covid deaths within 28 days of a positive test by area with observations added.csv",
+      "format": {"type": "csv"}
+    },
+
+     "transform":[
+
+        {"filter": {
+          "field": "areaName",
+          "oneOf": ["Westminster", "Gateshead", "Derby"]}
+          }
+
+
+      ],
+
+
+    "height": 300,
+    "width": 310,
+
+    "mark": {"type": "line", "point": false},
+
+    "encoding": {
+
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+
+      "y": {
+        "field": "cumDeaths28DaysByDeathDate",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+      },
+
+      "color": {
+        "field": "areaName",
+        "type": "nominal",
+        "scale": {"scheme": "set1"},
+        "title": "LEGEND TITLE",
+        "legend": {
+          "orient": "top-left",
+          "fillColor": "#FcFdFd"}
+      }
+  }
+  }
