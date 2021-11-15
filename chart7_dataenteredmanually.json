@@ -4,7 +4,7 @@
 
   "title": {
     "text": "Manual Chart",
-    "subtitle":"A bar chart with the data being manually input",
+    "subtitle":"A bar chart with the data being manually input, the GDP of 5 countries in 2020 (Billion)",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
@@ -12,8 +12,8 @@
   },
   "data": {
     "values": [
-      {"x": "UK", "y": 28}, {"x": "USA", "y": 55}, {"x": "France", "y": 43},
-      {"Poland": "D", "y": 91}, {"x": "y", "y": 81}
+      {"x": "UK", "y": 2.708}, {"x": "USA", "y": 20.940}, {"x": "France", "y": 2.603},
+      {"x": "Japan", "y": 5.05}, {"x": "China", "y": 14.72}
     ]
   },
   "height": 300,
