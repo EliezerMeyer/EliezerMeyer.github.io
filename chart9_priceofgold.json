@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {
+      "text": "The Price of Gold",
+      "subtitle":"This graph measures the price of gold per troy ounce in USD",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+     "data": {
+      "url": "https://data.nasdaq.com/api/v3/datasets/LBMA/GOLD.csv?api_key=2_QoLw7vhFbxY1QhpDjW",
+      "format": {"type": "csv"}
+    },
+
+
+    "height": 300,
+    "width": 310,
+
+    "mark": {"type": "line", "point": false},
+
+    "encoding": {
+
+      "x": {
+        "field": "Date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+
+      "y": {
+        "field": "USD (AM)",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+      }
+
+
+  }
+  }
