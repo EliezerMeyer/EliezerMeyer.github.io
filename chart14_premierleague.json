@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
     "title": {
-      "text": "New Covid Cases by Area",
-      "subtitle":"This graph compares the number of new cases in London, Bristol and Birmingham",
+      "text": "Premier League Standings",
+      "subtitle":"This graph shows the points each team has accumulated in the Premier League",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
