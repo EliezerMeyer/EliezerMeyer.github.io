@@ -31,7 +31,7 @@
       },
 
       "y": {
-        "field": "Points",
+        "field": "points",
         "type": "quantitative",
         "title": null,
         "axis": {"grid": false}
