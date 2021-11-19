@@ -3,7 +3,7 @@
 
     "title": {
       "text": "Premier League Standings",
-      "subtitle":"This graph shows the points each team has accumulated in the Premier League",
+      "subtitle":"This graph shows the points each team has accumulated in the Premier League (As at 19/11/2021)",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
