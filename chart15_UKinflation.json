@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {
+      "text": "UK Inflation 2021",
+      "subtitle":"This graph shows supports the claim that inflation has been increasing over 2021",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+     "data": {
+      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/ONS%20inflation%20data%20homework%208.csv",
+      "format": {"type": "csv"}
+    },
+
+
+    "height": 300,
+    "width": 310,
+
+    "mark": {"type": "line", "point": false},
+
+    "encoding": {
+
+      "x": {
+        "field": "Date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+
+      "y": {
+        "field": "CPI Inflation Rate",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+      }
+  }
+  }
