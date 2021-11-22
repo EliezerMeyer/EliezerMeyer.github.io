@@ -3,7 +3,7 @@
 
     "title": {
       "text": "UK Inflation 2021",
-      "subtitle":"This graph shows supports the claim that inflation has been increasing over 2021",
+      "subtitle":"This graph shows the inflation rate over 2021",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
