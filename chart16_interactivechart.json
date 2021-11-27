@@ -1,32 +1,49 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Interactive Chart",
+    "text": "Growth rate of Atmospherice carbon dioxide - Interactive Chart",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
     "color": "black"
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Annual%20Growth%20Rate%20of%20Atmospheric%20Carbon%20Dioxide.csv",
-    "format": {"property": "csv"}
-  },
-  "height": 500,
-  "width": 710,
-  "mark": {"type": "line"},
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "title": null,
-      "axis": {"grid": false},
-      "sort": "ascending"
-    },
-    "y": {
-      "field": "Annual Increase",
-      "type": "quantitative",
-      "title": null,
-      "axis": {"grid": false}
+  "data": {"url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Annual%20Growth%20Rate%20of%20Atmospheric%20Carbon%20Dioxide.csv"},
+  "layer": [{
+    "params": [{
+      "name": "brush",
+      "select": {"type": "interval", "encodings": ["x"]}
+    }],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "temporal"
+      },
+      "y": {
+        "aggregate": "mean",
+        "field": "Annual Increase",
+        "type": "quantitative"
+      },
+      "opacity": {
+        "condition": {
+          "param": "brush", "value": 1
+        },
+        "value": 0.7
+      }
     }
-  }
+  }, {
+    "transform": [{
+      "filter": {"param": "brush"}
+    }],
+    "mark": "rule",
+    "encoding": {
+      "y": {
+        "aggregate": "mean",
+        "field": "Annual Increase",
+        "type": "quantitative"
+      },
+      "color": {"value": "firebrick"},
+      "size": {"value": 3}
+    }
+  }]
 }
