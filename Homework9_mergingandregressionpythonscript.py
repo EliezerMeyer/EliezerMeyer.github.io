@@ -25,3 +25,26 @@ df3 = df1.join(df2,rsuffix="_right")
 
 pd.set_option("display.max_rows", None, "display.max_columns", None)
 print (df3)
+
+# Time for advanced analytics
+
+# Importing helpful libraries
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Making it easier to plot the data
+
+x = df3["Year"].values
+y1 = df3[df3.columns[1]]
+y2 = df3[df3.columns[3]]
+
+# Importing Searborn
+
+import seaborn as sns
+sns.set()
+
+# Running a regression to see the relationship between the unemployment rate and the number of people who had to sleep rough one night in Autumn in England
+
+sns.regplot(x=y1, y=y2)
+plt.show()
