@@ -7,9 +7,12 @@ body {
 .grid-container {
   display:grid;
   grid-template-columns: auto auto auto;
+  height: 500px;
+  width: 200px;  
 }
 
 
 .grid-item {
   background-color: white;
+  border:
 }
