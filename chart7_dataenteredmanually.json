@@ -17,7 +17,7 @@
     ]
   },
   "height": 300,
-  "width": 345,
+  "width": 280,
   "mark": "bar",
   "encoding": {
     "x": {"field": "x", "type": "nominal", "axis": {"labelAngle": 0}},

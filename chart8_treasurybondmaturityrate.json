@@ -11,8 +11,8 @@
     "url": "https://www.alphavantage.co/query?function=TREASURY_YIELD&interval=monthly&maturity=10year&apikey=HX43Q0EHT1EKCCFD",
     "format": {"property": "data"}
   },
-  "height": 500,
-  "width": 710,
+  "height": 300,
+  "width": 280
   "mark": {"type": "line"},
   "encoding": {
     "x": {

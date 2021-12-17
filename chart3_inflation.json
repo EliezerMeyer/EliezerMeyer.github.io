@@ -13,7 +13,7 @@
 
 
     "width":300,
-    "height":300,
+    "height":280,
 
     "data": {
         "name":"myData",
@@ -22,7 +22,7 @@
           "type":"json",
           "property": "years"
         }},
-  
+
 
     "mark":{
       "type": "line",
@@ -36,12 +36,12 @@
       {"filter": "datum.year<maxYear"}
     ],
 
-    "params": [    
+    "params": [
       {"name":"minYear", "value":1800,
          "bind":{
            "input": "range",
-           "min": 1800, 
-           "max": 2021, 
+           "min": 1800,
+           "max": 2021,
            "step": 1,
            "name": "Start year:"}
       },
@@ -49,8 +49,8 @@
       {"name":"maxYear", "value":2021,
          "bind":{
            "input": "range",
-           "min": 1800, 
-           "max": 2021, 
+           "min": 1800,
+           "max": 2021,
            "step": 1,
            "name": "End year:"}
       }
@@ -58,20 +58,20 @@
 
 
     "encoding": {
-      
+
       "x": {
         "field": "date",
         "type": "temporal",
         "title":null
         },
-  
+
       "y": {
-        "field": "value",                
+        "field": "value",
         "type": "quantitative",
         "title":null,
         "scale":{
           "domain":{
-            "data": "myData", 
+            "data": "myData",
             "field": "value"}}
         }
   }
