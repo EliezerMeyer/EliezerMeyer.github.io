@@ -3,3 +3,8 @@
 body {
   background-color: #C2B0AC;
 }
+
+.grid-item {
+  display: grid;
+  background-color: white
+}
