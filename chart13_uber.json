@@ -11,8 +11,8 @@
     "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/loophomeworkUBER.json",
     "format": {"property": "values"}
   },
-  "height": 500,
-  "width": 710,
+  "height": 300,
+  "width": 280,
   "mark": {"type": "line"},
   "encoding": {
     "x": {
