@@ -9,6 +9,8 @@ body {
 /* Setting the display of the page to the grid format*/
 
 .grid-items {
+  margin-left: auto;
+  margin-right: auto;
   display:grid;
   height: 500px;
   width: 200px;
