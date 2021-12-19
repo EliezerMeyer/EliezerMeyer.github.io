@@ -8,9 +8,9 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-.grid-items {
+.grid-item {
   display: grid;
-
+  grid-row-gap: 50px;
 }
 
 /* Restarting CSS
