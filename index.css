@@ -8,6 +8,8 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
+/* Restarting CSS
+
 .grid-items {
   margin-left: inherit;
   margin-right: inherit;
@@ -17,9 +19,11 @@ body {
   width: 200px;
 }
 
-/* Styling indivudual grids*/
+
 
 .grid-item {
   background-color: white;
   border: 5px #1A378F;
 }
+
+*/
