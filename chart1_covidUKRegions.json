@@ -1,7 +1,7 @@
-  {"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  
+  {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "description": "Coronavirus cases",
-  
+
   "data": {
     "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=newCasesByPublishDate&format=csv",
     "format": {"type": "csv"}
@@ -18,11 +18,11 @@
 
 
   "height": 300,
-  
+
   "width": 280,
-  
+
   "mark": {"type": "bar", "width":10},
-  
+
   "selection": {
     "Region": {
       "type": "single",
@@ -46,7 +46,7 @@
     }
   },
   "transform": [
-    
+
     {"filter": {"selection": "Region"}},
     {
       "filter": {
@@ -66,8 +66,8 @@
       "type": "quantitative",
       "title": null
     },
-    
-      
+
+
     "color": {
       "field": "areaName",
       "type": "nominal",
