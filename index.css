@@ -1,8 +1,12 @@
 /*My CSS sheet*/
 
+/* Changing the backround color*/
+
 body {
   background-color: #C2B0AC;
 }
+
+/* Setting the display of the page to the grid format*/
 
 .grid-container {
   display:grid;
@@ -10,8 +14,9 @@ body {
   width: 200px;
 }
 
+/* Styling indivudual grids*/
 
 .grid-item {
   background-color: white;
-  border:
+  border:5px #1A378F;
 }
