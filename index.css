@@ -19,6 +19,8 @@ body {
 /* Styling indivudual grids*/
 
 .grid-item {
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   border:5px #1A378F;
 }
