@@ -9,9 +9,9 @@ body {
 /* Setting the display of the page to the grid format*/
 
 .grid-items {
-  margin-left:inherit;
+  margin-left: inherit;
   margin-right: inherit;
-  display:grid;
+  display: grid;
   grid-template-columns: 100%;
   grid-gap: 10%;
   height: 500px;
@@ -22,5 +22,5 @@ body {
 
 .grid-item {
   background-color: white;
-  border:5px #1A378F;
+  border: 5px #1A378F;
 }
