@@ -8,11 +8,10 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
+
 .grid-item {
   display: grid;
   grid-row-gap: 50px;
-  border-radius: 5px;
-  border-color: blueviolet;
 }
 
 /* Restarting CSS
