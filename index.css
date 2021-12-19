@@ -11,6 +11,7 @@ body {
 .grid-item {
   display: grid;
   grid-row-gap: 50px;
+  grid-border: 5px light-blue;
 }
 
 /* Restarting CSS
