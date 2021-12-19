@@ -8,6 +8,11 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
+.grid-items {
+  display: grid;
+
+}
+
 /* Restarting CSS
 
 .grid-items {
