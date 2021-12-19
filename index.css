@@ -12,6 +12,7 @@ body {
   margin-left:inherit;
   margin-right: inherit;
   display:grid;
+  grid-template-columns: 100%;
   grid-row-gap: 50px;
   height: 500px;
   width: 200px;
