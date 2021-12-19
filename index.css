@@ -8,7 +8,7 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-.grid-container {
+.grid-items {
   display:grid;
   height: 500px;
   width: 200px;
