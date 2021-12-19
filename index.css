@@ -12,12 +12,13 @@ body {
   display: grid;
   grid-template-columns: 45% 45%;
   grid-row-gap: 50px;
+  column-gap: 100px;
 
 }
 
 .grid-item {
   hight: 1000px;
-  width: 1000px;
+  width: 500px;
   background-color: blue;
 }
 
