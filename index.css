@@ -10,7 +10,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: auto auto;
   grid-row-gap: 50px;
   column-gap: 100px;
 
@@ -19,7 +19,7 @@ body {
 .grid-item {
   hight: 1000px;
   width: 500px;
-  background-color: blue;
+  background-color: green;
 }
 
 /* Restarting CSS
