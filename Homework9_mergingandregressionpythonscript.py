@@ -42,9 +42,15 @@ y2 = df3[df3.columns[3]]
 # Importing Searborn
 
 import seaborn as sns
-sns.set()
+
+# Making sure the final figure is a size that matches my other charts
+
+sns.set(rc = {'figure.figsize': (5.729,5.729)})
 
 # Running a regression to see the relationship between the unemployment rate and the number of people who had to sleep rough one night in Autumn in England
 
 sns.regplot(x=y1, y=y2)
-plt.show()
+plt.xlabel('Unemployment Rate (%)', size=12)
+plt.ylabel('Number of People Homeless for at least one night in Autumn', size=12)
+plt.title('Unemployment and Homelessness')
+plt.savefig(r'C:\Users\meyer\github\EliezerMeyer.github.io\Homework9_regressionimage.png')
