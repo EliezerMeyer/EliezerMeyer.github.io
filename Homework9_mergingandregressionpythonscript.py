@@ -61,4 +61,4 @@ plt.savefig(r'C:\Users\meyer\github\EliezerMeyer.github.io\Homework9_regressioni
 
 import scipy as sp
 
-model = LinearRegression(fit_intercept=True)
+# Testing to see if i can push changes to github
