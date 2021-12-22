@@ -10,34 +10,21 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   grid-row-gap: 50px;
-  column-gap: 100px;
+  grid-column-gap: 10px;
+  background-color: rgb(38, 177, 149);
+  border-color: red;
+  justify-content: center;
+  padding: 10px;
+  align-content: center;
 
 }
 
 .grid-item {
-  hight: 1000px;
-  width: 500px;
-  background-color: green;
-}
-
-/* Restarting CSS
-
-.grid-items {
-  margin-left: inherit;
-  margin-right: inherit;
-  display: grid;
-  grid-gap: 50px;
-  height: 500px;
-  width: 200px;
-}
-
-
-
-.grid-item {
+  hight: 400px;
+  width: 400px;
   background-color: white;
-  border: 5px #1A378F;
+  padding: 50px;
+  justify-content: center;
 }
-
-*/

@@ -1,4 +1,4 @@
-# Importing requests so Python can capture data from my raw github
+# Importing requests so Python can capture data from my raw github (I later changed to use the pd.read_csv command)
 import requests
 
 # Importing pandas to make data tables
@@ -54,3 +54,11 @@ plt.xlabel('Unemployment Rate (%)', size=12)
 plt.ylabel('Number of People Homeless for at least one night in Autumn', size=12)
 plt.title('Unemployment and Homelessness')
 plt.savefig(r'C:\Users\meyer\github\EliezerMeyer.github.io\Homework9_regressionimage.png')
+
+# Whilst I have run the regression in Seaborn, in order for the chart to look similar to all the others on my site, I will export the regression coordinates to vega-lite. I therfore have to run the regression again, get the x and y values for the line of best fit, save those to a csv and then chart on vega lite.
+
+# Importing the necessary tools
+
+import scipy as sp
+
+model = LinearRegression(fit_intercept=True)
