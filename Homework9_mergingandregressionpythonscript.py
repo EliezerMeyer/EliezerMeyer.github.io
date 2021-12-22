@@ -56,9 +56,3 @@ plt.title('Unemployment and Homelessness')
 plt.savefig(r'C:\Users\meyer\github\EliezerMeyer.github.io\Homework9_regressionimage.png')
 
 # Whilst I have run the regression in Seaborn, in order for the chart to look similar to all the others on my site, I will export the regression coordinates to vega-lite. I therfore have to run the regression again, get the x and y values for the line of best fit, save those to a csv and then chart on vega lite.
-
-# Importing the necessary tools
-
-import scipy as sp
-
-# Testing to see if i can push changes to github
