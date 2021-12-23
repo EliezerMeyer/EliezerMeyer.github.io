@@ -1,0 +1,48 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Unemployment and Homelessness",
+    "subtitle":"I ran the regression using data from the ONS between 2010-2020",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "data": {"url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/regression_homework_final_data.csv"},
+
+
+  "height": 300,
+  "width": 280,
+
+"layer":[{
+
+  "mark": {
+    "type":"circle",
+    "size": 85},
+
+
+  "encoding": {
+    "x": {
+      "field": "Unemployment Rate ",
+      "type": "quantitative",
+      "title": "Unemployment Rate"
+      },
+
+    "y": {
+      "field": " Number of People Homeless for at least 1 Night",
+      "type": "quantitative",
+      "title": "Number of People Homeless for at least 1 Night"
+      }
+  }},
+
+    {
+      "mark": {"type": "line", "color": "blue"},
+      "encoding": {
+        "x": {"field": "xfit", "type": "quantitative"},
+        "y": {"field": "yfit", "type": "quantitative"}
+      }
+    }
+]
+
+}
