@@ -186,6 +186,7 @@ dfie["S"] = np.nan
 dfie["S"] = dfie["S"].fillna(1)
 dfie.columns = ["A", "B"]
 
+# Whilst the above tasks, could be done quicker with a for loop, I was unable to create a dynamic variable
 
 dfis = dfib.append([dfic, dfid, dfie])
 
@@ -201,3 +202,10 @@ print(df5)
 # I can now save this data to a csv to be used for making charts on Vega Lite
 
 df5.to_csv("Project_InnovationIndex_WealthInequality_Data.csv")
+
+# I cannot display this data for all countries on a graph as it would overload the reader
+# I will therfore select countries who's GII scores, outperform their peers, are in line with their peers, are outperformed by their peers. With peers being countries with the same income scores
+# High income countries: Switzerland, Slovenia, Trinidad and Tobego
+# Upper middle income countries: China, Colombia, Botswana
+# Lower middle income countries: Viet Nam, Senegal, Angola
+# Low income countries: Rwanda, Mozambique, Yemen
