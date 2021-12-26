@@ -1,0 +1,133 @@
+# The Global Innovation Index (GII), ranks all countries in terms of innovation and is released every year in a large pdf
+# To automate the process of gathering this data, I am creating a program utilising Selenium to automatically take me to the relevent web page to download this pdf
+# I then use Tabula to extract the tables directly from the pdf and create Pandas Dataframes
+
+# Importing the necessary Selenium modules
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+# Setting my chromepath so that Selenium can access Google Chrome
+
+path = "C:\Windows\chromedriver.exe"
+
+driver = webdriver.Chrome(path)
+
+# Telling Python to go to the relevant website to find this years Global Innovation Index Report
+
+driver.get("https://www.wipo.int/global_innovation_index/en/2021/")
+
+# Telling python to click on the link to access this years report, in future years I would just have to change "2021" to the current year
+
+link = driver.find_element(By.LINK_TEXT, "Download the Global Innovation Index 2021")
+link.click()
+
+# Python has taken me to the most recent report and I have saved it as "innovation.pdf", it is a 226 page pdf, the data I want is on page 24
+
+# Importing the necessary Tabula and Pandas modules as well as Numpy
+
+import pandas as pd
+import tabula
+import numpy as np
+
+# Getting python to take the data directly off the tables in the pdf
+
+# I have set "stream=True" since not all columns in the table are separated by lines, but do have white space between them
+# Futhermore, Tabula was unable to read the pdf when "lattice=True"
+
+Data = tabula.read_pdf("innovation.pdf", pages="24", stream=True)
+
+# In order for me the see the data better, I went python to show me the complete dataframe
+
+pd.set_option("display.max_rows", 1000, "display.max_columns", 1000)
+
+# The second half of the table is placed next to the first half in the pdf, this means that I have a dataframe with the
+# Second half of values in a different column rather than below the rest of the data, I will need to change this
+
+# Changing what I have from a list of lists to a dataframe
+
+df = pd.concat(Data)
+
+# Naming all the columns in the dataframe to help when I split it
+
+df.columns=["A","B","C","D","E","F","G","H","I","J"]
+
+# Constructing my two seprate Dataframes, capturing the two tables on the pdf
+
+df1 = df.loc[:,["A","B","C"]]
+df2 = df.loc[:,["F","G","H"]]
+
+# Making df2 have the same heading as df1 so they can be appended more easily
+
+df2 = df2.drop(labels=[0,1])
+df2.columns=["A","B","C"]
+
+# Appending the data
+
+df3 = df1.append(df2)
+
+# Giving the columns their correct names, and getting rid of the first two rows that were in the PDF
+
+df3.columns=["GII Rank","Country","GII Score"]
+df3 = df3.drop(labels=[0,1])
+
+# I now have a list of 132 countries, showing their GII ranks and scores
+
+# Now time to add inequality data
+
+# I will be using the Wealth gini index, from the World Population Review Website
+# In order to be able to update my data with minimal effort if the website updates its figures, I will be scraping the Website
+
+# Importing necessary modules for web scrape
+
+import requests
+from bs4 import BeautifulSoup
+
+# Website I want to scrape
+
+URL = "https://worldpopulationreview.com/country-rankings/wealth-inequality-by-country"
+html = requests.get(URL)
+soup = BeautifulSoup(html.content,'html.parser')
+
+# Using the identifier I have found for results in the table
+
+Results = soup.find_all("td")
+
+# Extracting the text
+
+Results_list = [i.text for i in Results]
+
+# My list shows each country, its wealth Gini index score, and its population
+# I will extract only the country names and the wealth Gini scores and make them into two columns in a dataframe
+
+# Extracting the variables I want
+
+Country_list = Results_list[::3]
+Gini_list = Results_list[1::3]
+
+# Making the dataframes
+
+dfg1 = pd.DataFrame(Country_list)
+dfg2 = pd.DataFrame(Gini_list)
+
+# Merging the dataframes
+
+dfg3 = pd.concat([dfg1,dfg2], axis=1)
+
+# Naming Columns
+
+dfg3.columns=["Country", "Gini Wealth Index Score"]
+
+# In order to merge df3 and dfg3, I need to make sure that country names match
+# I have identified that some countries do not exist in both datasets and thus will not be used
+# Some countries exist in both dataframes but have different names or spelling, I will make them match
+# I will match in preference of df3, since I might want to add more data from the pdf
+
+dfg3["Country"] = dfg3["Country"].replace(["United States", "South Korea", "Hong Kong", "Vietnam", "Russia", "Iran", "Moldova", "Bosnia And Herzegovina", "Brunei", "Tanzania","Dominica", "Trinidad And Tobago", "Bolivia", "Laos"],["United States of America", "Republic of Korea", "Hong Kong, China", "Viet Nam", "Russian Federation", "Iran (Islamic Republic of)", "Republic of Moldova", "Bosnia and Herzegovina", "Brunei Darussalam", "United Republic of Tanzania", "Dominican Republic", "Trinidad and Tobago", "Bolivia (Plurinational State of)", "Lao People’s Democratic Republic"])
+
+# Now that the non-missing values are matching, I can merge the two dataframes based on country
+
+df4 = pd.merge(df3, dfg3, on="Country")
+
+# My dataframe (df4) now shows: GII Rank, Country, GII Score, Gini Wealth Index Score
