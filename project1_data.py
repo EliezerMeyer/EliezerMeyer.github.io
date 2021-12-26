@@ -130,4 +130,31 @@ dfg3["Country"] = dfg3["Country"].replace(["United States", "South Korea", "Hong
 
 df4 = pd.merge(df3, dfg3, on="Country")
 
-# My dataframe (df4) now shows: GII Rank, Country, GII Score, Gini Wealth Index Score
+# My dataframe (df4) now shows: GII Rank, Country, GII Score, Gini Wealth Index Score for 126 countries
+
+# It might add more to the analysis to classify countries into income groups, this is done on page 25 of the innovation PDF
+
+# Extracting the income data
+
+Income = tabula.read_pdf("innovation.pdf", pages="25", stream=True)
+
+# Changing what I have from a list of lists to a dataframe
+
+Incomedf = pd.concat(Income)
+
+# The data has been extracted such that column titles are what the first row should be, I will therefore change this
+
+# Here I create a new row based of the column titles and also adjust the indexing of the dataframe
+Incomedf.loc[-1] = Incomedf.columns
+Incomedf.index = Incomedf.index+1
+Incomedf = Incomedf.sort_index()
+
+# Creating new column titles for the DataFrame
+
+Incomedf.columns = ["A", "B", "C", "D", "E"]
+
+# The high-income group is represented by "B", the Upper-Middle income group by "C", the Lower-Middle income group by "D" and the low-income group by "E"
+
+# There are duplicate results in this dataframe (perhaps from an error when I created it), I will therefore remove all duplicates
+
+Incomedf = Incomedf.drop_duplicates(subset=None, keep="first", inplace=False)
