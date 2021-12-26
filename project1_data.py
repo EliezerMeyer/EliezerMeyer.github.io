@@ -209,3 +209,8 @@ df5.to_csv("Project_InnovationIndex_WealthInequality_Data.csv")
 # Upper middle income countries: China, Colombia, Botswana
 # Lower middle income countries: Viet Nam, Senegal, Angola
 # Low income countries: Rwanda, Mozambique, Yemen
+
+# It is useful to have df5 and I may use it for other charts, I will creat a specific dataframe for the above countries to visualise the data better and to use for the Vega Lite chart
+
+df6 = df5[(df5["Country"] == "Switzerland") | (df5["Country"] == "Slovenia") | (df5["Country"] == "Trinidad and Tobago") | (df5["Country"] == "China") | (df5["Country"] == "Colombia") | (df5["Country"] == "Botswana") | (df5["Country"] == "Viet Nam") | (df5["Country"] == "Senegal") | (df5["Country"] == "Angola") | (df5["Country"] == "Rwanda") | (df5["Country"] == "Mozambique") | (df5["Country"] == "Yemen")]
+df6.to_csv("Project_chart1_Data")
