@@ -158,3 +158,46 @@ Incomedf.columns = ["A", "B", "C", "D", "E"]
 # There are duplicate results in this dataframe (perhaps from an error when I created it), I will therefore remove all duplicates
 
 Incomedf = Incomedf.drop_duplicates(subset=None, keep="first", inplace=False)
+
+# I want to assign each country a score based on its income groups. I will put each group into a dataframe, add a new column with an income score and merge them all back into a new DataFrame
+# With an income score of "1" being assigned to the lowest-income group, and an income score of "4" being assigned to the highest income group
+# Since some columns were longer than others in the pdf, a lot of the dataframes will have rows full of missing values, I will remove those too
+
+dfib = pd.DataFrame(Incomedf["B"])
+dfib["S"] = np.nan
+dfib["S"] = dfib["S"].fillna(4)
+dfib.columns = ["A", "B"]
+
+dfic = pd.DataFrame(Incomedf["C"])
+dfic = dfic.dropna(how = "all")
+dfic["S"] = np.nan
+dfic["S"] = dfic["S"].fillna(3)
+dfic.columns = ["A", "B"]
+
+dfid = pd.DataFrame(Incomedf["D"])
+dfid = dfid.dropna(how = "all")
+dfid["S"] = np.nan
+dfid["S"] = dfid["S"].fillna(2)
+dfid.columns = ["A", "B"]
+
+dfie = pd.DataFrame(Incomedf["E"])
+dfie = dfie.dropna(how = "all")
+dfie["S"] = np.nan
+dfie["S"] = dfie["S"].fillna(1)
+dfie.columns = ["A", "B"]
+
+
+dfis = dfib.append([dfic, dfid, dfie])
+
+dfis.columns=["Country", "Income Score"]
+
+# I now have my dataframe with all countries and their income scores. I can now merge it with the large datadrame
+
+df5 = pd.merge(df4, dfis, on="Country")
+print(df5)
+
+# My dataframe now contains: GII Rank, Country, GII Score, Gini Wealth Index Score and Income score for 125 countries
+# This script will require very few changes to update all its data, once a new pdf is released and the World Population Review website is updated
+# I can now save this data to a csv to be used for making charts on Vega Lite
+
+df5.to_csv("Project_InnovationIndex_WealthInequality_Data.csv")
