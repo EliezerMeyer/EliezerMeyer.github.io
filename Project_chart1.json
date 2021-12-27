@@ -11,7 +11,7 @@
     },
 
      "data": {
-      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Project_chart1_Data",
+      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Project_InnovationIndex_WealthInequality_Data.csv",
       "format": {"type": "csv"}
     },
 
@@ -24,23 +24,23 @@
     "encoding": {
 
       "x": {
-        "field": "Country",
-        "type": "nominal",
-        "title": null,
+        "field": "GII Score",
+        "type": "quantitative",
+        "title": "Innovation Index Score",
         "axis": {"grid": false}
       },
 
       "y": {
-        "field": "GII Score",
+        "field": "Gini Wealth Index Score",
         "type": "quantitative",
-        "title": "Global Innovation Index",
+        "title": "Gini Wealth Index Score",
         "axis": {"grid": false}
       },
 
              "color": {
-        "field": "Gini Wealth Index Score",
+        "field": "Income Score",
         "type": "quantitative",
-        "title":"Gini",
+        "title":["Income Score:","With '1' Showing Low", "Income Countries", "and '4' Showing", "High Income Countries"],
         "scale": { "scheme": "oranges"}},
 
 
