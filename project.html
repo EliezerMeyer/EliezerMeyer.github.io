@@ -22,22 +22,25 @@
 
 
 <!-- ///////////////////  START BODY //////////////////////////////////// -->
-
 <body>
 
-<h1> Eliezer Meyer Project Page</h1>
+<!--Vaga embed, with notes for what is going on -->
+  <div class="chart" id="firstChart">
 
-<!--Chart 1 -->
-<div class="grid-item">
-  <div class="chart" id="chart19">
       <script>
-        var myChart1 = "project_chart1.json";
-        vegaEmbed('#chart19', myChart19);
+        // Following the script tag we are using Javascript.
+        // One way to tell is to see how comments work...
+        // First job is to set the chart as a JS variable:
+        var myChart1 = "projectchart1_innovationandwealthinequality.json";
+        // Now we simply insert it, using Vega's embed code:
+        // The embed function needs to be told the location, and what to put there.
+        vegaEmbed('#firstChart', myChart1);
       </script>
-    </div>
+
   </div>
 
 </body>
-<!-- ///////////////////  END BODY //////////////////////////////////// -->
+
+<!-- ///////////////////  BODY //////////////////////////////////// -->
 
 </html>
