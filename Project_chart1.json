@@ -28,7 +28,7 @@
       "encoding": {
         "x": {
           "field": "GII Score",
-          "title": "Global Innovation Index Score",
+          "title": "Global Innovation Index (GII) Score",
           "type": "quantitative"
         },
         "y": {
