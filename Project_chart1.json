@@ -3,7 +3,7 @@
 
     "title": {
       "text": "Innovation and Wealth Inequality",
-      "subtitle":"This graph looks at the wealth inequality in countries with differing levels of innovation ",
+      "subtitle":"This graph looks at the wealth inequality in countries with differing levels of innovation",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
@@ -19,37 +19,76 @@
     "height": 300,
     "width": 280,
 
-    "mark": {"type": "point", "fill": "false"},
-
-    "encoding": {
-
-      "x": {
-        "field": "GII Score",
-        "type": "quantitative",
-        "title": "Innovation Index Score",
-        "axis": {"grid": false}
+    "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
       },
-
-      "y": {
-        "field": "Gini Wealth Index Score",
-        "type": "quantitative",
-        "title": "Gini Wealth Index Score",
-        "axis": {"grid": false}
-      },
-
-             "color": {
+      "encoding": {
+        "x": {
+          "field": "GII Score",
+          "title": "Global Innovation Index Score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Gini Wealth Index Score",
+          "type": "quantitative"
+        },
+         "color": {
         "field": "Income Score",
         "type": "quantitative",
         "title":["Income Score:","With '1' Showing Low", "Income Countries", "and '4' Showing", "High Income Countries"],
         "scale": { "scheme": "oranges"}},
-
-
-      "tooltip": [
+        "tooltip": [
         {"field": "Country", "type": "nominal"},
         {"field": "GII Score", "type": "quantitative"},
         {"field": "Gini Wealth Index Score", "type": "quantitative"}, {"field": "Income Score", "type": "quantitative"}
 
       ]
-
-  }
-  }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "black"
+      },
+      "transform": [
+        {
+          "regression": "Gini Wealth Index Score",
+          "on": "GII Score"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "GII Score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Gini Wealth Index Score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Gini Wealth Index Score",
+          "on": "GII Score",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+  ]
+}
