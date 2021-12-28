@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
     "title": {
-      "text": "Innovation and Wealth Inequality - Adjusted for Income Score",
+      "text": "Innovation and Wealth Inequality - Separated by Income Score",
       "subtitle":["When adjusting for Income Score, there seems to be some correlation between the", "variables for high-income countries"],
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
