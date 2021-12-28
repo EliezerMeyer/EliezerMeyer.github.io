@@ -16,17 +16,17 @@
     },
 
 
-    "height": 300,
-    "width": 280,
+    "height": 140,
+    "width": 130,
 
-    "mark": {"type": "point", "filled": false},
+    "mark": {"type": "point", "filled": false, "color": "orange"},
 
     "encoding": {
 
       "x": {
         "field": "GII Score",
         "type": "quantitative",
-        "title": "Global Innovation Index Score",
+        "title": "GII Score",
         "axis": {"grid": false}
       },
 
@@ -46,7 +46,7 @@
 
        "facet": {
                 "field": "Income Score",
-                "columns": 1,
+                "columns": 2,
                 "title":"Income Score"}
 
 
