@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
     "title": {
-      "text": "The Price of Gold",
-      "subtitle":"This graph measures the price of gold per troy ounce in USD",
+      "text": "Innovation and Wealth Inequality - Adjusted for Income Score",
+      "subtitle":["When adjusting for Income Score, there seems to be some correlation between the", "variables for high-income countries"],
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
@@ -11,7 +11,7 @@
     },
 
      "data": {
-      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Project_chart1_Data",
+      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/Project_InnovationIndex_WealthInequality_Data.csv",
       "format": {"type": "csv"}
     },
 
@@ -19,23 +19,35 @@
     "height": 300,
     "width": 280,
 
-    "mark": {"type": "line", "point": false},
+    "mark": {"type": "point", "filled": false},
 
     "encoding": {
 
       "x": {
-        "field": "Country",
-        "type": "nominal",
-        "title": null,
+        "field": "GII Score",
+        "type": "quantitative",
+        "title": "Global Innovation Index Score",
         "axis": {"grid": false}
       },
 
       "y": {
-        "field": "GII Score",
+        "field": "Gini Wealth Index Score",
         "type": "quantitative",
-        "title": null,
+        "title": "Gini Wealth Index Score",
         "axis": {"grid": false}
-      }
+      },
+
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "GII Score", "type": "quantitative"},
+        {"field": "Gini Wealth Index Score", "type": "quantitative"}, {"field": "Income Score", "type": "quantitative"}
+
+      ],
+
+       "facet": {
+                "field": "Income Score",
+                "columns": 1,
+                "title":"Income Score"}
 
 
   }
