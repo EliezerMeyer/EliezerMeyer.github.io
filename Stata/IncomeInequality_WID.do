@@ -6,8 +6,14 @@ clear
 
 set more off
 
-cd "C:\Users\meyer\github\EliezerMeyer.github.io"
+cd "C:\Users\meyer\github\EliezerMeyer.github.io\Stata"
 
-log using "IncomeInequality_WID.log", replace
+//log using "IncomeInequality_WID.log", replace
+
+// Time to get my WID data
+
+// No longer necessary in code, but I originally had to put "ssc install wid"
+
+wid, indicators(shweal) areas(FR) perc(p90p100 p99p100) ages(992) pop(j) clear
 
 
