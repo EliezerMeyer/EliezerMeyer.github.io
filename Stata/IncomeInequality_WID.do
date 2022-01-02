@@ -110,7 +110,7 @@ results_list = [i.text for i in results]
 df5 = pd.DataFrame(results_list[0::19])
 df5.columns=["year"]
 df6 = pd.DataFrame(results_list[9::19])
-df6.columns=["Utility Patent Grants, of US Origination"]
+df6.columns=["Utility Patent Grants of US Origination"]
 
 df7 = pd.concat([df5, df6], axis=1)
 
@@ -123,6 +123,13 @@ df8 = df3.iloc[50:108:, :]
 df7["year"] = df7["year"].values.astype(int)
 
 df9 = pd.merge(df8, df7, on="year")
+
+# Removing commas from US Patent data so that I can chart with Vega Lite
+
+df9["Utility Patent Grants of US Origination"]=df9["Utility Patent Grants of US Origination"].str.replace(",","")
+df9["Utility Patent Grants of US Origination"] = df9["Utility Patent Grants of US Origination"].values.astype(int)
+
+print(df9)
 
 df9.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_chart4data.csv")
 
