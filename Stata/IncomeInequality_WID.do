@@ -58,9 +58,9 @@ df3= pd.merge(df1, df2, on="year")
 # My next task is to create a chart highlighting the disparity between the income share of the top 10% vs that of the bottom 50%
 # I don't want to overload the reader of the chart and will therfore only use data from 2000 for the chart
 # I will further not use the years of the pandemic as this may distort the effect we are seeing
+# The graph looked to cluttered withh all observations from 2000, so I will show the reader data every 3 years from 2000-2018
 
-
-df4 = df3.iloc[87:107, :]
+df4 = df3.iloc[87:107:3, :]
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -82,6 +82,50 @@ plt.ylabel("Year")
 plt.title("The Vast Income Gap in the USA")
 plt.savefig(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_pic3.png", bbox_inches="tight")
 plt.show()
+
+# This chart has been saved and has been used as my project chart 3
+
+# For my project chart 4 I will access US Patent Office data and see if it has any relationship with the income inequality data
+
+# Putting the URL I would like Python to read from
+
+url = "https://www.uspto.gov/web/offices/ac/ido/oeip/taf/us_stat.htm"
+
+import pandas as pd
+
+# Getting the necessary web scraping modules
+
+from bs4 import BeautifulSoup
+import requests
+
+html = requests.get(url)
+soup = BeautifulSoup(html.content, 'html.parser')
+
+results = soup.find_all("td")
+results_list = [i.text for i in results]
+
+# I only want the data concerning the years and patents granted
+# Since my income inequality data is for the USA, I will use data of patents granted of US origin
+
+df5 = pd.DataFrame(results_list[0::19])
+df5.columns=["year"]
+df6 = pd.DataFrame(results_list[9::19])
+df6.columns=["Utility Patent Grants, of US Origination"]
+
+df7 = pd.concat([df5, df6], axis=1)
+
+# I want to merge df7 with df3, but df3 has observations for many more years. I will create a dataframe with the years I want and then proceed with the merge. I can them save the data and create my chart on Vega Lite
+
+df8 = df3.iloc[50:108:, :]
+
+# In order for them to merge, I have to make the values in df7 integers
+
+df7["year"] = df7["year"].values.astype(int)
+
+df9 = pd.merge(df8, df7, on="year")
+
+df9.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_chart4data.csv")
+
 
 end
 
