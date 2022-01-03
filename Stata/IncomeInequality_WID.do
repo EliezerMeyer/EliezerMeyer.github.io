@@ -129,9 +129,27 @@ df9 = pd.merge(df8, df7, on="year")
 df9["Utility Patent Grants of US Origination"]=df9["Utility Patent Grants of US Origination"].str.replace(",","")
 df9["Utility Patent Grants of US Origination"] = df9["Utility Patent Grants of US Origination"].values.astype(int)
 
-print(df9)
+# To contextualise the patent data, I will look at it on a per capita basis. I can access World Bank Population data directly through Python, will create new columns in the dataframe for population and patents per capita and then save the data
 
-df9.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_chart4data.csv")
+import world_bank_data as wb
+
+df10 = pd.DataFrame(wb.get_series('SP.POP.TOTL', date='1963:2020', id_or_value='id', country="US", simplify_index=True))
+
+# This dataframe is in a strange format, e.g. there are two rows for the column title, I will therfore extract the values and create a new dataframe which I can merge with df9
+
+df10.columns=["year"]
+values = df10["year"].values
+df11=pd.DataFrame(values)
+df11.columns=["population"]
+
+# Time for the merge
+
+df12 = pd.concat([df9, df11], axis=1)
+df12["Per Capita Utility Patent Grants of US Origination"]= df12["Utility Patent Grants of US Origination"].values / df12["population"].values
+
+# Saving to chart on Vega Lite
+
+df12.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_chart4data.csv")
 
 
 end
