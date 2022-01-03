@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Innovation and Income Inequality",
-    "subtitle": "Innovation seems to be a good predictor of income inequality",
+    "text": "Innovation and Income Inequality USA",
+    "subtitle": "Innovation seems to be a good predictor of income inequality in the USA",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
