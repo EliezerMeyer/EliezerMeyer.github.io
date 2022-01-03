@@ -56,11 +56,10 @@ df3= pd.merge(df1, df2, on="year")
 
 # I now have the data I want
 # My next task is to create a chart highlighting the disparity between the income share of the top 10% vs that of the bottom 50%
-# I don't want to overload the reader of the chart and will therfore only use data from 2000 for the chart
-# I will further not use the years of the pandemic as this may distort the effect we are seeing
-# The graph looked to cluttered withh all observations from 2000, so I will show the reader data every 3 years from 2000-2018
+# I don't want to overload the reader with too much data, but still want to show how inequality has changed since 1960
+# I will therefore look at the figures every 15 years from 1960 to 2020 on chart 3 
 
-df4 = df3.iloc[87:107:3, :]
+df4 = df3.iloc[47:108:15, :]
 
 import matplotlib.pyplot as plt
 import seaborn as sns
