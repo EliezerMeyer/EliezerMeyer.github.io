@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Innovation and Income Inequality",
+    "subtitle": "Innovation seems to be a good predictor of income inequality",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/project_chart4data.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "rebeccapurple"
+      },
+      "encoding": {
+        "x": {
+          "field": "Utility Patent Grants of US Origination",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "IncomeShareTop10",
+          "title": "Income Share of the Top 10%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "firebrick"
+      },
+      "transform": [
+        {
+          "regression": "IncomeShareTop10",
+          "on": "Utility Patent Grants of US Origination"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Utility Patent Grants of US Origination",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "IncomeShareTop10",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "IncomeShareTop10",
+          "on": "Utility Patent Grants of US Origination",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+  ]
+}
