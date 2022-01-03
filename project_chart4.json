@@ -13,14 +13,10 @@
   },
   "layer": [
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "color": "rebeccapurple"
-      },
+      "mark": {"type": "point", "filled": true, "color": "rebeccapurple"},
       "encoding": {
         "x": {
-          "field": "Utility Patent Grants of US Origination",
+          "field": "Per Capita Utility Patent Grants of US Origination",
           "type": "quantitative"
         },
         "y": {
@@ -31,32 +27,26 @@
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "firebrick"
-      },
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
         {
           "regression": "IncomeShareTop10",
-          "on": "Utility Patent Grants of US Origination"
+          "on": "Per Capita Utility Patent Grants of US Origination"
         }
       ],
       "encoding": {
         "x": {
-          "field": "Utility Patent Grants of US Origination",
+          "field": "Per Capita Utility Patent Grants of US Origination",
           "type": "quantitative"
         },
-        "y": {
-          "field": "IncomeShareTop10",
-          "type": "quantitative"
-        }
+        "y": {"field": "IncomeShareTop10", "type": "quantitative"}
       }
     },
     {
       "transform": [
         {
           "regression": "IncomeShareTop10",
-          "on": "Utility Patent Grants of US Origination",
+          "on": "Per Capita Utility Patent Grants of US Origination",
           "params": true
         },
         {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
@@ -68,9 +58,7 @@
         "align": "right",
         "y": -5
       },
-      "encoding": {
-        "text": {"type": "nominal", "field": "R2"}
-      }
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
     }
   ]
 }
