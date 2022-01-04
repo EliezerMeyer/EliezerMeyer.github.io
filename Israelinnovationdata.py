@@ -13,6 +13,12 @@ pd.set_option("display.max_rows", 1000, "display.max_columns", 1000)
 
 df1 = pd.DataFrame(wb.get_series('GB.XPD.RSDV.GD.ZS', date='1996:2018', id_or_value='id', country="ISR", simplify_index=True))
 
+# Vega Lite is unable to chart the above dataframe so I will try and create a new one based off the values in df1
+df2 = pd.DataFrame(df1["GB.XPD.RSDV.GD.ZS"].values)
+
+df2.columns=["Percentage of GDP Spent on R&D"]
+df2.insert(1, "Year", range(1996, 1996+len(df2)))
+
 # Saving it to be charted
 
-df1.to_csv("Israeldata.csv")
+df2.to_csv("Israeldata.csv")
