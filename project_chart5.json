@@ -33,7 +33,7 @@
           "x": {
               "field": "Date",
               "type": "temporal",
-              "title":null,
+              "title": "Date",
               "axis":{
                 "grid": false
               }},
@@ -41,7 +41,7 @@
           "y": {
               "field": {"repeat": "layer"},
               "type": "quantitative",
-              "title": null},
+              "title": "Share Price Performance"},
 
           "color": {
               "datum": {"repeat": "layer"},
@@ -52,5 +52,3 @@
                 }
           }
   }
-
- 
