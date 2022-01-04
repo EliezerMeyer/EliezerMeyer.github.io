@@ -4,7 +4,7 @@ import numpy as np
 
 pd.set_option("display.max_rows", 1000, "display.max_columns", 1000)
 
-tickers = ["FB", "AAPL", "AMZN", "NFLX", "GOOGL"]
+tickers = ["FB", "AAPL", "AMZN", "NFLX"]
 start = "2017-01-04"
 end = "2022-01-04"
 
