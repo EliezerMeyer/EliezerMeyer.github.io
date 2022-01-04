@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {
+      "text": "Innovation Can Lead to Prosperity - Rise of the FAANG",
+      "subtitle": ["The rebased share price performance of FAANG comapnies over the last five years", "compared to the performance of the S&P500 over the same period"],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/stocks.csv",
+      "format": {"type": "csv"}
+    },
+"transform": [
+      {"calculate": "datum.AAPL/29.0049991607666*100", "as": "Apple_Index"},
+      {"calculate": "datum.AMZN/757.1799926757812*100", "as": "Amazon_Index"},
+      {"calculate": "datum.FB/118.69000244140625*100", "as": "Facebook_Index"},
+      {"calculate": "datum.GOOGL/807.77001953125*100", "as": "Google_Index"}, {"calculate": "datum.NFLX/129.41000366210938*100", "as": "Netflix_Index"}, {"calculate": "datum.SP500/2270.75*100", "as": "SP500_Index"}],
+
+  "XYZrepeat": {"layer": ["AAPL", "AMZN", "FB", "GOOGL", "NFLX", "SP500"]},
+  "repeat": {"layer": ["Apple_Index", "Amazon_Index", "Facebook_Index", "Google_Index", "Netflix_Index", "SP500_Index"]},
+    "height": 300,
+  "width": 350,
+
+  "spec": {
+      "mark": {
+          "type":"line",
+          "strokeWidth":1},
+
+      "encoding": {
+          "x": {
+              "field": "Date",
+              "type": "temporal",
+              "title":null,
+              "axis":{
+                "grid": false
+              }},
+
+          "y": {
+              "field": {"repeat": "layer"},
+              "type": "quantitative",
+              "title": null},
+
+          "color": {
+              "datum": {"repeat": "layer"},
+              "scale": {"range": ["blue", "purple", "grey", "brown", "red", "black"]},
+              "legend": {
+                "orient":"top-left",
+                "fillColor":"lightgrey"}}
+                }
+          }
+  }
+
+ 
