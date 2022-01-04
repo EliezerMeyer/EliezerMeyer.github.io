@@ -24,7 +24,7 @@
       },
       "y": {
         "aggregate": "mean",
-        "field": "Percentage of GDP Spent on R&D",
+        "field": "Israel",
         "type": "quantitative",
         "title":"Proportion of GDP spent on R&D (%)"
       },
@@ -43,7 +43,7 @@
     "encoding": {
       "y": {
         "aggregate": "mean",
-        "field": "Percentage of GDP Spent on R&D",
+        "field": "Israel",
         "type": "quantitative"
       },
       "color": {"value": "firebrick"},
