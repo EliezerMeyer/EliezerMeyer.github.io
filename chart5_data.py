@@ -10,5 +10,6 @@ end = "2022-01-04"
 
 
 df1 = yf.download(tickers, start, end)["Close"]
+df1.columns=["AAPL", "AMZN", "FB", "GOOGL", "NFLX", "SP500"]
 
 df1.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\stocks.csv")
