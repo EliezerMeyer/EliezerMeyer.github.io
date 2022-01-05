@@ -54,6 +54,12 @@ df5 = pd.merge(df4, df3, on="year")
 
 df5.columns=["Year", "IncomeShareBottom50", "IncomeShareTop10", "IncomeShareTop1"]
 
+# This data is only accurate until 2016, so I will remove all later predictions
+
+df5.drop(df5.tail(5).index, inplace=True)
+
+# Now saving
+
 df5.to_csv(r"C:\Users\meyer\github\EliezerMeyer.github.io\Stata\IsraelIncomeData.csv")
 
 end
