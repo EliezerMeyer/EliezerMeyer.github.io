@@ -23,7 +23,11 @@
           "field": "IncomeShareTop10",
           "title": "Income Share of the Top 10%",
           "type": "quantitative"
-        }
+        },
+          "tooltip": [
+          {"field": "Per Capita Utility Patent Grants of US Origination", "type": "quantitative"},
+          {"field": "IncomeShareTop10", "type": "quantitative"}
+        ]
       }
     },
     {
