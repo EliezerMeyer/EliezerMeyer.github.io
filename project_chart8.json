@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Nobel Prize Winners and Income Inequality",
+    "subtitle": "This measure of innovation does not well predict inequality",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/NobelPrizeData.csv"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true, "color": "palevioletred"},
+      "encoding": {
+        "x": {
+          "field": "Nobel Prize Winners Per Capita",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Gini Income Score",
+          "title": "Income Gini Score",
+          "type": "quantitative"
+        },
+          "tooltip": [
+          {"field": "Nobel Prize Winners", "type": "quantitative"},
+          {"field": "Gini Income Score", "type": "quantitative"}, {"field": "Country", "type": "nominal"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "firebrick"},
+      "transform": [
+        {
+          "regression": "Gini Income Score",
+          "on": "Nobel Prize Winners Per Capita"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Nobel Prize Winners Per Capita",
+          "type": "quantitative"
+        },
+        "y": {"field": "Gini Income Score", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Gini Income Score",
+          "on": "Nobel Prize Winners Per Capita",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "cadetblue",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+}
