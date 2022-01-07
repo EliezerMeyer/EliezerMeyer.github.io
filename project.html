@@ -7,8 +7,10 @@
 
 <head>
 
-<!-- Linking my CSS stylesheet -->
-<!--<link rel="stylesheet" href="index.css" -->
+  <!-- Linking my CSS stylesheet -->
+  <link rel="stylesheet" href="project.css"
+
+
 
 <!--The next three lines allow the Vega embed-->
 <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
@@ -27,60 +29,80 @@
 <h1> Eliezer Meyer Project Page</h1>
 
 <!--Vaga embed, with notes for what is going on -->
+
+<div class="grid-container">
+
+<div class="grid-item">
+<div class="chart" id="chart5">
+    <script>
+      var myChart5 = "project_chart5.json";
+      vegaEmbed('#chart5', myChart5);
+    </script>
+  </div>
+  </div>
+
+<div class="grid-item">
+  <div>
+    <img src="project_pic3.png" style="width:340px;height:300px;">
+    </div>
+  </div>
+
+
+<div class="grid-item">
 <div class="chart" id="chart1">
     <script>
       var myChart1 = "Project_chart1.json";
       vegaEmbed('#chart1', myChart1);
     </script>
   </div>
+</div>
 
+<div class="grid-item">
   <div class="chart" id="chart2">
       <script>
         var myChart2 = "project_chart2.json";
         vegaEmbed('#chart2', myChart2);
       </script>
     </div>
+  </div>
 
-    <div>
-      <img src="project_pic3.png" style="width:340px;height:300px;">
-      </div>
-
-        <div class="chart" id="chart5">
-            <script>
-              var myChart5 = "project_chart5.json";
-              vegaEmbed('#chart5', myChart5);
-            </script>
-          </div>
-
+<div class="grid-item">
           <div class="chart" id="chart4">
               <script>
                 var myChart4 = "project_chart4.json";
                 vegaEmbed('#chart4', myChart4);
               </script>
             </div>
+          </div>
 
+<div class="grid-item">
+            <div class="chart" id="chart8">
+                <script>
+                  var myChart8 = "project_chart8.json";
+                  vegaEmbed('#chart8', myChart8);
+                </script>
+              </div>
+            </div>
+
+<div class="grid-item">
           <div class="chart" id="chart6">
               <script>
                 var myChart6 = "project_chart6.json";
                 vegaEmbed('#chart6', myChart6);
               </script>
             </div>
+          </div>
 
+<div class="grid-item">
             <div class="chart" id="chart7">
                 <script>
                   var myChart7 = "project_chart7.json";
                   vegaEmbed('#chart7', myChart7);
                 </script>
               </div>
+            </div>
 
-              <div class="chart" id="chart8">
-                  <script>
-                    var myChart8 = "project_chart8.json";
-                    vegaEmbed('#chart8', myChart8);
-                  </script>
-                </div>
-
-
+</div>
 
 
 </body>
