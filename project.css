@@ -10,14 +10,16 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 45%;
   grid-row-gap: 50px;
-  grid-column-gap: 10px;
+  grid-column-gap: 1px;
   background-color: null;
   border-color: red;
   justify-content: center;
   padding: 10px;
   align-content: center;
+  margin-left: 50px;
+  margin-right: 300px;
 
 }
 
@@ -27,4 +29,10 @@ body {
   background-color: white;
   padding: 50px;
   justify-content: center;
+}
+
+h6 {
+  column-span: all;
+  align-content: center;
+  width: 1000px;
 }
