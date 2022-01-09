@@ -54,7 +54,7 @@ p {
   color: #FDFDFD;
 }
 
-@media (max-width: 600px){
+@media only screen and (max-width: 600px){
   .grid-container {
     display: grid;
     grid-template-columns: 100%;
