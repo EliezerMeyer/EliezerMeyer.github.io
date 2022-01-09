@@ -54,13 +54,11 @@ p {
   color: #FDFDFD;
 }
 
-@media (max-width: 500px){
-
+@media (max-width: 600px){
   .grid-container {
     display: grid;
     grid-template-columns: 100%;
-    grid-row-gap: 0px;
-    grid-column-gap: 50px;
+    grid-row-gap: 10px;
     background-color: null;
     justify-content: center;
     padding: 10px;
@@ -77,6 +75,4 @@ p {
     padding: 5px;
     justify-content: center;
   }
-
-
 }
