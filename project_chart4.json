@@ -11,6 +11,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/project_chart4data.csv"
   },
+  "height": 300,
+  "width": 280,
   "layer": [
     {
       "mark": {"type": "point", "filled": true, "color": "rebeccapurple"},

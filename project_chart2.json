@@ -16,7 +16,7 @@
     },
 
 
-    "height": 140,
+    "height": 120,
     "width": 130,
 
     "mark": {"type": "point", "filled": false, "color": "orange"},
