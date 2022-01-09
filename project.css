@@ -13,7 +13,6 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-row-gap: 10px;
-  grid-column-gap: 50px;
   background-color: null;
   justify-content: center;
   padding: 5px;
@@ -24,7 +23,7 @@ body {
 }
 
 .grid-item {
-  hight: 450px;
+  height: 500px;
   width: 450px;
   background-color: white;
   padding: 5px;
@@ -71,7 +70,7 @@ p {
   }
 
   .grid-item {
-    hight: 450px;
+    height: 500px;
     width: 450px;
     background-color: white;
     padding: 5px;
