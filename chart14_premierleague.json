@@ -1,40 +1,33 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-    "title": {
-      "text": "Premier League Standings",
-      "subtitle":"This graph shows the points each team has accumulated in the Premier League (As at 19/11/2021)",
-      "subtitleFontStyle":"italic",
-      "subtitleFontSize":10,
-      "anchor": "start",
-      "color": "black"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Premier League Standings",
+    "subtitle": "This graph shows the points each team has accumulated in the Premier League (As at 19/11/2021)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/scraperhomeworkfinal.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 280,
+  "mark": {"type": "bar", "point": false},
+  "encoding": {
+    "x": {
+      "field": "Team",
+      "type": "nominal",
+      "title": null,
+      "axis": {"grid": false}
     },
-
-     "data": {
-      "url": "https://raw.githubusercontent.com/EliezerMeyer/EliezerMeyer.github.io/main/scraperhomeworkfinal.csv",
-      "format": {"type": "csv"}
-    },
-
-
-    "height": 300,
-    "width": 280,
-
-    "mark": {"type": "bar", "point": false},
-
-    "encoding": {
-
-      "x": {
-        "field": "Team",
-        "type": "nominal",
-        "title": null,
-        "axis": {"grid": false}
-      },
-
-      "y": {
-        "field": "points",
-        "type": "quantitative",
-        "title": null,
-        "axis": {"grid": false}
-      }
+    "y": {
+      "field": "points",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false},
+      "scale": {"domain": [0,30]}
+    }
   }
-  }
+}
