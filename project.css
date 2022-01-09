@@ -54,7 +54,7 @@ p {
   color: #FDFDFD;
 }
 
-@ @media (min-width: 900px) {
+@media (min-width: 900px) {
 
   .grid-container {
     display: grid;
