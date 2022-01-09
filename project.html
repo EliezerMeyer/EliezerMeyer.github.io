@@ -32,6 +32,18 @@
 
 <div class="grid-container">
 
+<H4>Why the Topic is Interesting:</H4>
+
+<br>
+
+<h6> Chart 1 shows the share price performance of what are considered some of the most innovative firms globally. As is displayed in the chart, over the last five years they have vastly outperformed the s&p 500 index. Whilst the s&p 500 more than doubled over this period, Apple saw its share price grow to more than six times its 2017 value, whilst Facebook, the weakest performer of the group saw its share price nearly triple. This project aims to see how the proceeds of innovation are distributed within society.
+
+In order to access stock data in the most automated and replicable way possible, the yfinance python module was used and the share prices were re-based in Vega-Lite to allow for easier comparison.
+
+Chart 2 uses the US as an example to show just how much income inequality has increased over the last 60 years. With the gap between the incomes of the bottom 50% of earners and the top 10% of earners steadily increasing. This data was sourced from the World Inequality Database and was accessed directly through Stata.</h6>
+
+<br>
+
 <div class="grid-item">
 <div class="chart" id="chart5">
     <script>
@@ -47,6 +59,19 @@
     </div>
   </div>
 
+<h4>Innovation and Wealth Inequality:</h4>
+
+<br>
+
+<h6>Chart 3 tries to establish a relationship between innovation as measured by a country’s Global Innovation Index (GII) Score and the Gini Wealth index score of a country. Countries are further classified into groups showing whether they are high or low-income countries.
+
+Data on GII scores and a country’s income status came from the World Intellectual Property Organisations’ (WIPO) World Intellectual Property Report. A PDF released every year. In order to automate the data gathering process from this source, my Python program incorporates a script directing the  Selenium module to take the user directly to the WIPO website to download the relevant annual report. Once the PDF is saved, the script uses the Tabula module to extract the data directly from the PDF.
+
+Gini Wealth Index Scores were scraped from the World Population Review website and after cleaning the data  to ensure country names matched, the dataset had complete data for 126 countries.
+
+As the regression in chart 3 shows however, there was not a clear correlation between a country’s GII score and their Gini wealth index. As the R^2 value of 0 showed, GII scores were not effective at explaining the disparities of wealth inequality between countries. Chart 4 tested whether the relationship would become more clear when countries were placed in their respective income groups, however this was not the case. </h6>
+
+<br>
 
 <div class="grid-item">
 <div class="chart" id="chart1">
@@ -66,6 +91,30 @@
     </div>
   </div>
 
+<h4>Innovation and Income Inequality:</h4>
+
+<br>
+
+<h6>Chart 5 uses Nobel Prize winners per capita as a proxy for how innovative a country is. The data on Nobel Prize Winners per country was scraped from the World Population Review website, and python was used to calculate the per capita figures. Gini income score data was sourced from the world bank with data being accessed through the world-bank-data Python module. In order to access the data in the most efficient way possible I tried inputting all the country names in one world-bank-data request, however results were returned in alphabetical order, not matching the order of my data frame. I therefore used a for loop to request the data in the order I wanted whilst using as few commands as possible.
+
+As the chart 5 regression shows, Nobel prize winners per capita is not an effective predictor of income inequality in a country, with the R^2 value only at 7%.
+
+Chart 6 uses patents per capita as a proxy for innovation and the income share of the top 10% as a measure of inequality, and proved to be a much more effective model.
+The inequality data was accessed from the World Inequality database through Stata, whilst patent data was scraped directly from the US patent and Trademark Office. Furthermore World Bank population data was used to generate per capita figures. In order to access and manipulate this data in one place, I used a Stata script to run Stata commands and then access Python within Stata.
+
+This model suggests that inequality does increase with innovation, with a rise in innovation explaining 62% of the increase in inequality. </h6>
+
+<br>
+
+  <div class="grid-item">
+              <div class="chart" id="chart8">
+                  <script>
+                    var myChart8 = "project_chart8.json";
+                    vegaEmbed('#chart8', myChart8);
+                  </script>
+                </div>
+              </div>
+
 <div class="grid-item">
           <div class="chart" id="chart4">
               <script>
@@ -75,14 +124,14 @@
             </div>
           </div>
 
-<div class="grid-item">
-            <div class="chart" id="chart8">
-                <script>
-                  var myChart8 = "project_chart8.json";
-                  vegaEmbed('#chart8', myChart8);
-                </script>
-              </div>
-            </div>
+<h4>A Case Study of Israel:</h4>
+
+<br>
+
+<h6>For charts 7 and 8, I displayed innovation and inequality statistics for Israel, known for its innovative technologies and success in fostering startups. As chart 7 shows, R&D spending as a proportion of GDP is both high and increasing. As chart 8 shows, it’s income inequality is perhaps greater that that would of the US (shown in chart 2) with the top 10% of earners claiming around 50% of national income.</h6>
+
+<br>
+
 
 <div class="grid-item">
           <div class="chart" id="chart6">
@@ -101,6 +150,12 @@
                 </script>
               </div>
             </div>
+
+<h4>Conclusion:</h4>
+
+<br>
+
+<h6>Whilst not all of the proxies for innovation are good predictors of inequality, chart 6 displays a clear relationship, showing that prosperity from innovation comes at a social cost. This promotes further questions on whether innovation benefits all, or leaves some behind.</h6>
 
 </div>
 
