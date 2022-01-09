@@ -11,8 +11,8 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 45% 45%;
-  grid-row-gap: 0px;
+  grid-template-columns: 100%;
+  grid-row-gap: 10px;
   grid-column-gap: 50px;
   background-color: null;
   justify-content: center;
@@ -54,14 +54,16 @@ p {
   color: #FDFDFD;
 }
 
-@media only screen and (max-width: 600px){
+@ @media (min-width: 900px) {
+
   .grid-container {
     display: grid;
-    grid-template-columns: 100%;
-    grid-row-gap: 10px;
+    grid-template-columns: 45% 45%;
+    grid-row-gap: 0px;
+    grid-column-gap: 50px;
     background-color: null;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
     align-content: center;
     margin-left: 50px;
     margin-right: 200px;
@@ -75,4 +77,6 @@ p {
     padding: 5px;
     justify-content: center;
   }
+
+
 }
