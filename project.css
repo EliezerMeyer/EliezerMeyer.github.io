@@ -3,7 +3,7 @@
 /* Changing the backround color*/
 
 body {
-  background-color: brown;
+  background-color: green;
   font-size: 200%;
 }
 
@@ -32,9 +32,6 @@ body {
   justify-content: center;
 }
 
-.adjust-line-height {
-  line-height: 0.2em;
-}
 
 h1 {
   align-content: center;
@@ -45,6 +42,7 @@ h4 {
   display: block;
   align-content: center;
   margin-left: 50px;
+  margin-bottom: 1px;
 }
 p {
   display: block;
@@ -52,11 +50,4 @@ p {
   align-content: center;
   width: 1000px;
   margin-left: 50px;
-}
-
-br {
-  display:
-  margin: 1px;
-  padding: 0px;
-
 }
