@@ -76,9 +76,9 @@ plt.plot(df4.loc[:,"IncomeShareBottom50"], df4.loc[:,"year"], label="Bottom 50%"
 plt.plot(df4.loc[:,"IncomeShareTop10"], df4.loc[:,"year"], label="Top 10%", linestyle="", marker="|", markeredgewidth=2)
 plt.hlines(df4.loc[:,"year"], df4.loc[:,"IncomeShareBottom50"], df4.loc[:,"IncomeShareTop10"])
 plt.legend(bbox_to_anchor=(1, 1), title="Income Percentile", numpoints=1)
-plt.xlabel("Share of pre-tax national income")
-plt.ylabel("Year")
-plt.title("The Vast Income Gap in the USA")
+plt.xlabel("Share of pre-tax national income",  fontweight="bold")
+plt.ylabel("Year",  fontweight="bold")
+plt.title("The Vast Income Gap in the USA", fontweight="bold")
 plt.savefig(r"C:\Users\meyer\github\EliezerMeyer.github.io\project_pic3.png", bbox_inches="tight")
 plt.show()
 
