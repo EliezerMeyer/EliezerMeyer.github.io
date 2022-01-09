@@ -32,7 +32,22 @@ body {
   justify-content: center;
 }
 
+.adjust-line-height {
+  line-height: 0.2em;
+}
+
+h1 {
+  align-content: center;
+  margin-left: 150px;
+}
+
+h4 {
+  display: block;
+  align-content: center;
+  margin-left: 50px;
+}
 p {
+  display: block;
   column-span: all;
   align-content: center;
   width: 1000px;
@@ -40,7 +55,7 @@ p {
 }
 
 br {
-  display: block;
+  display:
   margin: 1px;
 
 }
