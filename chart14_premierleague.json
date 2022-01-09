@@ -14,7 +14,7 @@
   },
   "height": 300,
   "width": 280,
-  "mark": {"type": "bar", "point": false},
+  "mark": {"type": "bar", "point": false, "color": "lightgreen"},
   "encoding": {
     "x": {
       "field": "Team",

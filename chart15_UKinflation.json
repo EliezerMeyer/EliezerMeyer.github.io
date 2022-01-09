@@ -19,7 +19,7 @@
     "height": 300,
     "width": 280,
 
-    "mark": {"type": "line", "point": false},
+    "mark": {"type": "line", "point": false, "color": "red"},
 
     "encoding": {
 

@@ -13,7 +13,7 @@
   },
   "height": 300,
   "width": 280,
-  "mark": {"type": "line"},
+  "mark": {"type": "line", "color": "green"},
   "encoding": {
     "x": {
       "field": "date",
