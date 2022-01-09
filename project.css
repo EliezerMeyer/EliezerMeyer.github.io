@@ -13,7 +13,7 @@ body {
   display: grid;
   grid-template-columns: 45% 45%;
   grid-row-gap: 50px;
-  grid-column-gap: 1px;
+  grid-column-gap: 50px;
   background-color: null;
   border-color: red;
   justify-content: center;
