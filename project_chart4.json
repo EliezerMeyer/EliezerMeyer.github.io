@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Innovation and Income Inequality USA",
-    "subtitle": "Innovation seems to be a good predictor of income inequality in the USA",
+    "subtitle": "Innovation seems to be a good predictor of increasing income inequality in the USA",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
@@ -19,7 +19,8 @@
       "encoding": {
         "x": {
           "field": "Per Capita Utility Patent Grants of US Origination",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Patent Grants per Capita"
         },
         "y": {
           "field": "IncomeShareTop10",
@@ -27,7 +28,8 @@
           "type": "quantitative"
         },
           "tooltip": [
-          {"field": "Per Capita Utility Patent Grants of US Origination", "type": "quantitative"},
+            {"field": "year", "type": "temporal"},
+          {"field": "Utility Patent Grants of US Origination", "type": "quantitative"},
           {"field": "IncomeShareTop10", "type": "quantitative"}
         ]
       }
