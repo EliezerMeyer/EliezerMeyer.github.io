@@ -9,7 +9,7 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-.grid-container {
+/*.grid-container {
   display: grid;
   grid-template-columns: 100%;
   grid-row-gap: 10px;
@@ -20,6 +20,23 @@ body {
   margin-left: 50px;
   margin-right: 200px;
 
+*/
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px){
+
+.grid {
+  flex-direction: column;
+}
+.grid-item:last-of-type {
+  margin-top: 20px;
+}
 }
 
 .grid-item {
@@ -35,6 +52,7 @@ h1 {
   align-content: center;
   margin-left: 150px;
   color: #FDFDFD;
+  text-align: center;
 }
 
 h4 {
@@ -43,39 +61,13 @@ h4 {
   margin-left: 50px;
   margin-bottom: 1px;
   color: #FDFDFD;
+  text-align: center;
 }
 p {
   display: block;
   column-span: all;
   align-content: center;
-  width: 1000px;
   margin-left: 50px;
   color: #FDFDFD;
-}
-
-@media (min-width: 900px) {
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: 45% 45%;
-    grid-row-gap: 0px;
-    grid-column-gap: 50px;
-    background-color: null;
-    justify-content: center;
-    padding: 5px;
-    align-content: center;
-    margin-left: 50px;
-    margin-right: 200px;
-
-  }
-
-  .grid-item {
-    height: 500px;
-    width: 450px;
-    background-color: white;
-    padding: 5px;
-    justify-content: center;
-  }
-
-
+  text-align: center;
 }

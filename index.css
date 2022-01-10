@@ -8,31 +8,39 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-row-gap: 50px;
-  grid-column-gap: 10px;
-  background-color: null;
-  border-color: red;
-  justify-content: center;
-  padding: 10px;
-  align-content: center;
+
+.grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
 
 }
 
+@media (max-width: 900px){
+  .grid{
+    flex-direction: column;
+  }
+  .grid-item:last-of-type{
+    margin-top: 50px;
+  }
+}
+
 .grid-item {
-  hight: 400px;
-  width: 400px;
+  width: 450px;
   background-color: white;
   padding: 50px;
   justify-content: center;
+  margin-top: 20px;
 }
 
 h1 {
   color: #FDFDFD;
+  text-align: center;
 }
 
 h2 {
   color: #FDFDFD;
+  text-align: center;
 }
