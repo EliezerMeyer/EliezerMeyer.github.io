@@ -9,18 +9,7 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-/*.grid-container {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-row-gap: 10px;
-  background-color: null;
-  justify-content: center;
-  padding: 5px;
-  align-content: center;
-  margin-left: 50px;
-  margin-right: 200px;
 
-*/
 
 .grid {
   display: flex;
