@@ -16,6 +16,8 @@ driver = webdriver.Chrome(path)
 
 # Telling Python to go to the relevant website to find this years Global Innovation Index Report
 
+# To make the code applicable to other years, the user will simply have to change the year value
+
 driver.get("https://www.wipo.int/global_innovation_index/en/2021/")
 
 # Telling python to click on the link to access this years report, in future years I would just have to change "2021" to the current year
