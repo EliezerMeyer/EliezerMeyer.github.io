@@ -18,6 +18,8 @@ body {
 
 }
 
+/* Making the screen responsive to different screen sizes */
+
 @media (max-width: 900px){
   .grid{
     flex-direction: column;
@@ -27,6 +29,8 @@ body {
   }
 }
 
+/* Adjusting each grid-item */
+
 .grid-item {
   width: 450px;
   background-color: white;
@@ -34,6 +38,8 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
+/* Formatting my headings */
 
 h1 {
   color: #FDFDFD;

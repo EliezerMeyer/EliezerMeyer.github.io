@@ -9,14 +9,14 @@ body {
 
 /* Setting the display of the page to the grid format*/
 
-
-
 .grid {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+/* Making the page responsive to different screen sizes */
 
 @media (max-width: 900px){
 
@@ -36,6 +36,7 @@ body {
   justify-content: center;
 }
 
+/* Formatting my text, both headings and paragraphs */
 
 h1 {
   align-content: center;
